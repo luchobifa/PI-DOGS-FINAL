@@ -7,7 +7,8 @@ const initialState = {
 };
 
 function parseWeight(str){
-    let arr = str.split(' - ')
+    if(str){
+        let arr = str.split(' - ')
     //console.log(arr)
     if(arr.length > 1){
         let sum = 0;
@@ -20,6 +21,7 @@ function parseWeight(str){
     }else{
         //console.log(arr.join())
         return arr.join()
+    }
     }
 }
 
