@@ -1,0 +1,26 @@
+.conteiner{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.filters{
+    display: flex;
+    margin-top: 42px;
+    /* background-color: black; */
+    height: 85px;
+    width: 1000px;
+    gap: 20px; 
+    background-image: url("../img/fondo.jpg");
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.select{
+    cursor: pointer;
+    border: 2px solid;
+    height: 35px;
+    width: 250px;
+}

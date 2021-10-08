@@ -1,0 +1,27 @@
+.dogCard{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 350px;
+    height: 460px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 10px;
+    cursor: pointer;
+    /* background-color: white; */
+    background-image: url("../img/textura.jpg");
+}
+
+.dogCard:hover{
+    transform: translate(-10px, -10px);
+}
+
+.imgDog{
+    width: 348px;
+    height: 280px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 9px;
+}
+
+.name{
+    font-size: 20px;
+}
+
