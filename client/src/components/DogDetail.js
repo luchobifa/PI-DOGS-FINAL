@@ -1,5 +1,6 @@
 import {React, useEffect} from "react"
 import {useSelector, useDispatch} from 'react-redux'
+import { Link } from "react-router-dom";
 import { getDogId } from "../actions";
 import styles from "../css/DogDetail.module.css"
 
@@ -22,6 +23,7 @@ export default function DogDetail(props){
             <div>
                 {
                     <div className = {styles.conteiner}>
+                       <Link to = "/home"><button> BACK</button></Link>
                         <div className = {styles.content}>
                             <h2 className = {styles.title}>{detail.name}</h2>
                             <ul className = {styles.ul}>

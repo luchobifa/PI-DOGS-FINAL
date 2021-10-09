@@ -31,15 +31,11 @@ export default function Filters(){
         dispatch(order(e.target.value))
     }
 
-    // function resetFilters(){
-    //     setBreed('Breeds');
-    //     setTemp('Temperaments');
-    // }
-
    return(
        <div className = {styles.conteiner}>
            <form className= {styles.filters}>
                 <select className = {styles.select} onChange = {handleChangeBreeds}>
+                    <option value = 'Select Breed' selected disabled>Select Breed </option>
                     <option value = 'All Breeds' >All Breeds</option>
                     {
                         allDogsCopy.map(d => <option key = {d.name}>{d.name}</option>)
@@ -47,6 +43,7 @@ export default function Filters(){
                 </select>
 
                 <select className = {styles.select} onChange = {handleChangeTemps}>
+                    <option value = 'Select Temperament' selected disabled>Select Temperament </option>
                     <option value = 'All Temperaments' >All Temperaments</option>
                     {
                         temps.map(t => <option key = {t.name}>{t.name}</option>)
@@ -54,6 +51,7 @@ export default function Filters(){
                 </select>
 
                 <select className = {styles.select} onChange = {handleChangeOrder}>
+                    <option value = 'Order by' selected disabled>Order by</option>
                     <option value = 'asc'>A - Z </option>
                     <option value = 'desc'>Z - A</option>
                     <option value = 'max_weight'>max weight</option>
