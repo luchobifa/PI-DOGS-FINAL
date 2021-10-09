@@ -3,6 +3,7 @@ import {useDispatch} from 'react-redux'
 import { Link } from 'react-router-dom';
 import { getDogs } from "../actions";
 import styles from '../css/LandingPage.module.css'
+import video from "../img/papis2.mp4"
 
 export default function LandingPage(){
     const dispatch =  useDispatch();
@@ -12,13 +13,17 @@ export default function LandingPage(){
         //cada vez q renderizo el comp me dispacha todos los perros
         dispatch(getDogs())
     }, [dispatch]);
+    
     return(
         <div className = {styles.backgr}>
-            <h1>The best</h1>
+            {/* <h1>The best</h1>
             <h1>therapist</h1>
             <h1>has fur</h1>
-            <h1>and four legs</h1>
-           <Link to='/home'><button>Get Started</button></Link> 
+            <h1>and four legs</h1> */}
+            <video className = {styles.video} autoPlay loop muted>
+                <source src={video} type="video/mp4"/>
+            </video>
+           <Link to='/home'><button className = {styles.btn}>Get Started</button></Link> 
         </div>
     );
 }

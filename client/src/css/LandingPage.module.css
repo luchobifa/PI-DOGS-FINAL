@@ -1,9 +1,28 @@
 .backgr{
-    background-image: url(../img/lp.jpg);
-    background-size: cover;
-    background-position: center;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
+    justify-content: center;
+    background-position: center;
+}
+
+.video{
+   
+    position: absolute;
+    z-index: -1;
+}
+
+.btn{
+    height: 38px;
+    width: 100px;
+    cursor: pointer;
+    margin-left: 90px;
+    border: 1px solid;
+    font-family: fantasy;
+    background-color: white;
+}
+
+.btn:hover{
+    background-color: lightblue;
 }
