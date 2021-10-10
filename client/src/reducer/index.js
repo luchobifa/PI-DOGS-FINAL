@@ -34,21 +34,11 @@ export default function rootReducer(state = initialState, action) {
                 filteredDogs: action.payload
             }
         case "GET_ALL_DOGS":
-            //si quiero mostrar todos reemplazo los 2
-            //if(action.payload.length > 1){
                 return{
                     ...state, 
                     //allDogs: action.payload,
                     filteredDogs: action.payload
                 }
-            //}
-            // else{
-            //     //si busque por la searchBar modifico solo el filterDogs
-            //     return{
-            //         ...state, 
-            //         filteredDogs: action.payload
-            //     }
-            // }
         case "ERROR":
             return{
                 ...state,

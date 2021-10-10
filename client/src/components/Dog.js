@@ -8,12 +8,9 @@ export default function Dog({img, name, temp, weight}){
             <h4 className = {styles.name}>
                 {name}
             </h4>
-          
             <p>
                 {temp}
             </p>  
-            
-           
             <p>
                 {weight}
             </p>

@@ -1,3 +1,9 @@
+.conteiner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .form{
     display: flex;
     justify-content: center;
@@ -5,4 +11,75 @@
     flex-direction: column;
     gap: 40px;
     margin-top: 50px;
+    background-color: RGB(239, 240 , 244);
+    width: 900px;
+    height: 600px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+}
+
+.content{
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+    width: 600px;
+}
+
+.nameyhei{
+    display: flex;
+    flex-direction: row;
+    gap: 35px;
+}
+
+.weiyspan{
+    display: flex;
+    flex-direction: row; 
+    gap: 35px;
+}
+
+.eachInput{
+    display: flex;
+    flex-direction: column;
+}
+
+.inputs{
+    margin-left: 20px;
+    border-color: RGB(204, 214 , 223);
+    border-radius: 4px;
+    height: 20px;
+}
+
+.label{
+    margin-bottom: 8px;
+    margin-right: 80px;
+}
+
+.temps{
+    display: inline-block;
+}
+
+.btn {
+	color: #ffffff !important;
+	text-transform: uppercase;
+	text-decoration: none;
+	background: RGB(41, 50 , 61);
+	border: 1px solid #030000 !important;
+	display: inline-block;
+	transition: all 0.4s ease 0s;
+    cursor: pointer;
+    font-family: 'Architects Daughter', cursive;
+    font-size: 18px;
+    width: 140px;
+    height: 50px;
+    border-radius: 8px;
+}
+
+.btn:hover {
+	color: #ffffff !important;
+	background: rgba(0, 0, 0, 0.876);
+	border-color: lightblue !important;
+	transition: all 0.4s ease 0s;
 }

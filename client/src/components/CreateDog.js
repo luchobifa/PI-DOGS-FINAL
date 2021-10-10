@@ -47,57 +47,73 @@ export default function CreateDog(){
     }
 
     function handleSelect(e){
-        setInput({
-            ...input,
-            temperaments: [...input.temperaments, e.target.value]
-        })
+        if(!input.temperaments.includes(e.target.value)){
+            setInput({
+                ...input,
+                temperaments: [...input.temperaments, e.target.value]
+            })
+        }
+        else{
+            return alert(`The temperament "${e.target.value}" is already added`)
+        }
         //console.log(input.temperaments)
     }
     //console.log(input)
+
+    function deleteTemp(temp){
+        setInput({
+            ...input,
+            temperaments : input.temperaments.filter(t => t !== temp)
+        })
+    }
+    
     
     return(
+        <div className = {styles.conteiner}>
         <form onSubmit = {handleSubmit} className = {styles.form}>
-            <div>
-                <label>name: </label>
-                <input type = 'text' value = {input.name} name = 'name' onChange = {handleChange} required></input>
-                *
-            </div>
+            <h2>Create a dog</h2>
+            <div className = {styles.content}>
+                <div className = {styles.nameyhei}>
+                    <div className={styles.eachInput}>
+                        <label className = {styles.label}>Name *</label>
+                        <input  className={styles.inputs} type = 'text' value = {input.name} name = 'name' onChange = {handleChange} required placeholder = "Type a name"></input>
+                    </div>
 
-            <div>
-                <label>height: </label>
-                <input  type = 'text' value = {input.height} name = 'height' onChange = {handleChange} required></input>
-                *
-            </div>
-
-            <div>
-                <label>weight: </label>
-                <input  type = 'text' value = {input.weight} name = 'weight' onChange = {handleChange} required></input>
-                *
-            </div>
-
-            <div>
-                <label>span life:</label>
-                <input  type = 'text' value = {input.life_span}  name = 'life_span' onChange = {handleChange}></input>
-            </div>
-
-            <div>
-                <label>temperaments: </label>
-                <select onChange = {handleSelect}>
-                    <option value = 'All Temperaments' >All Temperaments</option>
-                    {
-                        temps.map(t => <option key = {t.name}>{t.name}</option>)
-                    }
-                </select>
-                <div>
-                    <ul>
-                        <li>
-                            {input.temperaments.map(t => `${t}, `)}
-                        </li>
-                    </ul>
+                    <div className={styles.eachInput}>
+                        <label className = {styles.label}>Height *</label>
+                        <input   className={styles.inputs} type = 'text' value = {input.height} name = 'height' onChange = {handleChange} required placeholder = "Type the height"></input>
+                    </div>
                 </div>
-            </div>
 
-            <button>CREATE!</button>
+                <div className = {styles.weiyspan}>
+                    <div className={styles.eachInput}>
+                        <label className = {styles.label}>Weight *</label>
+                        <input  className={styles.inputs} type = 'text' value = {input.weight} name = 'weight' onChange = {handleChange} required placeholder = "Type the weight"></input>
+                    </div>
+                    <div className={styles.eachInput}>
+                        <label className = {styles.label}>Span life </label>
+                        <input   className={styles.inputs} type = 'text' value = {input.life_span}  name = 'life_span' onChange = {handleChange} placeholder = "Type the weight"></input>
+                    </div>
+                </div>
+
+                <div>
+                    <label> Add temperaments </label>
+                    <select className={styles.inputs} onChange = {handleSelect} defaultValue = 'All Temperaments'>
+                        <option value = 'All Temperaments'disabled>All Temperaments</option>
+                        {
+                            temps.map(t => <option key = {t.name}>{t.name}</option>)
+                        }
+                    </select>
+                    <div>
+                        <ul>
+                            {input.temperaments.map(t => <div key = {t} className = {styles.temps}>{t }<button onClick = {()=> deleteTemp(t)}>X</button></div>)}
+                        </ul>
+                    </div>
+                </div>
+
+                <button className = {styles.btn}>CREATE!</button>
+            </div>
         </form>
+        </div>
     )
 }

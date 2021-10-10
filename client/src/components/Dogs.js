@@ -44,7 +44,7 @@ export default function Dogs(){
             setCurrentPage(currentPage - 8)
     }
 
-    console.log(errors)
+    //console.log(errors)
 
     if(dogs.length){
         return(

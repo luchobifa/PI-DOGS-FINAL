@@ -21,9 +21,8 @@ export default function DogDetail(props){
     if(detail.hasOwnProperty('name')){
         return(
             <div>
-                {
+                    <Link to = "/home" className = {styles.link}><button className = {styles.btnBack}>BACK</button></Link>
                     <div className = {styles.conteiner}>
-                       <Link to = "/home"><button> BACK</button></Link>
                         <div className = {styles.content}>
                             <h2 className = {styles.title}>{detail.name}</h2>
                             <ul className = {styles.ul}>
@@ -37,7 +36,6 @@ export default function DogDetail(props){
                         </div>
                         <img className={styles.img} alt= ''  src= {detail.image}/>
                     </div>  
-                }
             </div>
         )
     }else{
