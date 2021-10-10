@@ -57,8 +57,32 @@
     margin-right: 80px;
 }
 
+.addedConteiner{
+    width: 600px;
+    height: 100px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
 .temps{
     display: inline-block;
+    margin-left: 10px;
+}
+
+.deleteBtn{
+    color: black;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-left: 3px;
+    border: 1px solid;
+}
+.deleteBtn:hover{
+    background-color: rgb(253, 0, 0);
+    color: white;
+    border-color: black;
 }
 
 .btn {

@@ -105,9 +105,9 @@ export default function CreateDog(){
                         }
                     </select>
                     <div>
-                        <ul>
-                            {input.temperaments.map(t => <div key = {t} className = {styles.temps}>{t }<button onClick = {()=> deleteTemp(t)}>X</button></div>)}
-                        </ul>
+                        <div className = {styles.addedConteiner}>
+                            {input.temperaments.map(t => <div key = {t} className = {styles.temps}>{t }<button className={styles.deleteBtn} onClick = {()=> deleteTemp(t)}>X</button></div>)}
+                        </div>
                     </div>
                 </div>
 

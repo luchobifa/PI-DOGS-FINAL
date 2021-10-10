@@ -30,7 +30,7 @@ export default function Filters(){
         // setBreed(e.target.value);
         dispatch(order(e.target.value))
     }
-
+    
    return(
        <div className = {styles.conteiner}>
            <form className= {styles.filters}>
