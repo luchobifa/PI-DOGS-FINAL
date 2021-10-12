@@ -7,11 +7,11 @@
 
 .filters{
     display: flex;
-    margin-top: 42px;
+    margin-top: 10px;
     /* background-color: black; */
     height: 85px;
-    width: 1000px;
-    gap: 20px; 
+    width: 45%;
+    gap: 30px; 
     background-image: url("../img/fondo.jpg");
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     justify-content: center;
@@ -22,5 +22,5 @@
     cursor: pointer;
     border: 2px solid;
     height: 35px;
-    width: 250px;
+    width: 24%;
 }

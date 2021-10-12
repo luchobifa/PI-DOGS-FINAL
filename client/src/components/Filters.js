@@ -51,7 +51,7 @@ export default function Filters(){
                 </select>
 
                 <select className = {styles.select} onChange = {handleChangeOrder} defaultValue = 'Order by'>
-                    <option value = 'Order by'  disabled>Order by</option>
+                    <option value = 'Order by'  disabled>Sort by</option>
                     <option value = 'asc'>A - Z </option>
                     <option value = 'desc'>Z - A</option>
                     <option value = 'max_weight'>max weight</option>

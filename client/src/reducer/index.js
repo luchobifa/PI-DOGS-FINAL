@@ -108,14 +108,14 @@ export default function rootReducer(state = initialState, action) {
                 return{
                     ...state,
                     filteredDogs: [...state.filteredDogs].sort((a, b) => {
-                        return ((parseWeight(a.weight['metric'])) - (parseWeight(b.weight['metric'])))
+                        return ((a.weight['metric'] ? parseWeight(a.weight['metric']) : parseWeight(a.weight)) - (b.weight['metric'] ? parseWeight(b.weight['metric']): parseWeight(b.weight)))
                     }),
                 }
             }else{
                 return{
                     ...state,
                     filteredDogs: [...state.filteredDogs].sort((a, b) => {
-                        return ((parseWeight(b.weight['metric'])) - (parseWeight(a.weight['metric'])))
+                        return ((b.weight['metric'] ? parseWeight(b.weight['metric']): parseWeight(b.weight)) - (a.weight['metric'] ? parseWeight(a.weight['metric']): parseWeight(a.weight)))
                     }),
                 }
             }

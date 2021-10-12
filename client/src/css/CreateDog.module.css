@@ -1,7 +1,16 @@
+.img{
+    background-image: url("../img/formback.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
 .conteiner{
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 180px;
+    margin-left: 300px;
 }
 
 .form{
@@ -12,20 +21,21 @@
     gap: 40px;
     margin-top: 50px;
     background-color: RGB(239, 240 , 244);
-    width: 900px;
+    width: 40%;
     height: 600px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 10px;
 }
 
 .content{
-    margin-bottom: 50px;
+    margin-bottom: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 50px;
     width: 600px;
+    height: 500px;
 }
 
 .nameyhei{
@@ -45,16 +55,29 @@
     flex-direction: column;
 }
 
+.title{
+    margin-top: 100px;
+}
+
 .inputs{
-    margin-left: 20px;
+    margin-left: 45px;
     border-color: RGB(204, 214 , 223);
     border-radius: 4px;
     height: 20px;
+    width: 220px;
+}
+
+.inputTemp{
+    margin-left: 35px;
+    border-color: RGB(204, 214 , 223);
+    border-radius: 4px;
+    height: 20px;
+    width: 150px;
 }
 
 .label{
     margin-bottom: 8px;
-    margin-right: 80px;
+    margin-right: 100px;
 }
 
 .addedConteiner{
@@ -97,8 +120,9 @@
     font-family: 'Architects Daughter', cursive;
     font-size: 18px;
     width: 140px;
-    height: 50px;
+    height: 80px;
     border-radius: 8px;
+    margin-bottom: 50px;
 }
 
 .btn:hover {

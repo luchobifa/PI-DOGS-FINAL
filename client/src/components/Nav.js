@@ -14,7 +14,6 @@ export default function Nav(){
         window.location.pathname = "/home"
     }
 
-    //empiezo a cargar los perros asi no me tarda en /home
     useEffect(()=>{
         //cada vez q renderizo el comp me dispacha todos los perros
         dispatch(getDogs())

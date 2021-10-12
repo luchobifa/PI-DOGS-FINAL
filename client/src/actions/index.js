@@ -42,6 +42,10 @@ export function postDog(input){
     }
 }
 
+export function getCopyDogs(arrDogs){
+    return{type: "GET_COPY_DOGS" , payload: arrDogs}
+}
+
 //filtros
 
 

@@ -1,11 +1,11 @@
 import {React, useEffect, useState} from "react";
 import styles from '../css/CreateDog.module.css'
-import { postDog, getTemperaments} from "../actions";
+import { postDog, getTemperaments, getDogs} from "../actions";
 import {useDispatch,useSelector} from 'react-redux'
 import { useHistory } from "react-router";
 
 export default function CreateDog(){
-    const history = useHistory()
+    const history = useHistory();
     const [input, setInput] = useState({
         name: '',
         height: '',
@@ -29,13 +29,16 @@ export default function CreateDog(){
         setInput(
             {
                 name: '',
-                height: '',
-                weight: '',
+                minHeight: '',
+                maxHeight: '',
+                minWeight: '',
+                maxWeight: '',
                 life_span: '',
                 temperaments: []
             } 
         )
-        history.push("/home")
+        dispatch(getDogs())
+        history.push("/home");
     }
 
     function handleChange(e){
@@ -43,7 +46,7 @@ export default function CreateDog(){
             ...input,
             [e.target.name] : e.target.value
         })
-        //console.log(input);
+       // console.log(input);
     }
 
     function handleSelect(e){
@@ -69,10 +72,12 @@ export default function CreateDog(){
     
     
     return(
+        <div className = {styles.img}>
         <div className = {styles.conteiner}>
         <form onSubmit = {handleSubmit} className = {styles.form}>
-            <h2>Create a dog</h2>
+            <h2 className = {styles.title}>Create a breed!</h2>
             <div className = {styles.content}>
+                
                 <div className = {styles.nameyhei}>
                     <div className={styles.eachInput}>
                         <label className = {styles.label}>Name *</label>
@@ -81,24 +86,34 @@ export default function CreateDog(){
 
                     <div className={styles.eachInput}>
                         <label className = {styles.label}>Height *</label>
-                        <input   className={styles.inputs} type = 'text' value = {input.height} name = 'height' onChange = {handleChange} required placeholder = "Type the height"></input>
+                        
+                        <input className={styles.inputs} type = 'number' defaultValue = "" name = 'minHeight' onChange = {handleChange} required placeholder = "Type the min height [Centimeters]"></input>
+                        
+                        
+                        <input   className={styles.inputs} type = 'number' defaultValue = "" name = 'maxHeight' onChange = {handleChange} required placeholder = "Type the max height [Centimeters]"></input>
+        
                     </div>
                 </div>
 
                 <div className = {styles.weiyspan}>
                     <div className={styles.eachInput}>
                         <label className = {styles.label}>Weight *</label>
-                        <input  className={styles.inputs} type = 'text' value = {input.weight} name = 'weight' onChange = {handleChange} required placeholder = "Type the weight"></input>
+
+                        <input  className={styles.inputs} type = 'number' defaultValue = "" name = 'minWeight' onChange = {handleChange} required placeholder = "Type the min weight [Centimeters]"></input>
+                        
+
+                        <input  className={styles.inputs} type = 'number' defaultValue = "" name = 'maxWeight' onChange = {handleChange} required placeholder = "Type the max weight [Centimeters]"></input>
+                        
                     </div>
                     <div className={styles.eachInput}>
                         <label className = {styles.label}>Span life </label>
-                        <input   className={styles.inputs} type = 'text' value = {input.life_span}  name = 'life_span' onChange = {handleChange} placeholder = "Type the weight"></input>
-                    </div>
+                        <input   className={styles.inputs} type = 'text' value = {input.life_span}  name = 'life_span' onChange = {handleChange} placeholder = "Type the life span [Years]"></input>
+                    </div> 
                 </div>
 
                 <div>
-                    <label> Add temperaments </label>
-                    <select className={styles.inputs} onChange = {handleSelect} defaultValue = 'All Temperaments'>
+                    <label> Add temperaments:</label>
+                    <select className={styles.inputTemp} onChange = {handleSelect} defaultValue = 'All Temperaments'>
                         <option value = 'All Temperaments'disabled>All Temperaments</option>
                         {
                             temps.map(t => <option key = {t.name}>{t.name}</option>)
@@ -114,6 +129,7 @@ export default function CreateDog(){
                 <button className = {styles.btn}>CREATE!</button>
             </div>
         </form>
+        </div>
         </div>
     )
 }

@@ -1,21 +1,18 @@
 import {React, useEffect, useState} from "react"
-import {useSelector} from 'react-redux'
+import {useSelector, useDispatch} from 'react-redux'
 // import {getDogs} from "../actions";
 import Dog from './Dog'
 import styles from '../css/Dogs.module.css'
 import { Link } from "react-router-dom";
+import {getCopyDogs} from "../actions/index"
 
 export default function Dogs(){
-    //const dispatch =  useDispatch();
+    const dispatch =  useDispatch();
     
-    //let allDogs = useSelector((state)=> (state.allDogs))
-    //console.log(allDogs); //-> array de todos los perros
     let dogs = useSelector((state) => (state.filteredDogs))
     let errors =  useSelector((state) => (state.error))
-    //console.log(filteredDogs);
-    
 
-    //lo hago en la landing y en nav 
+    //lo hago en la landing y en nav para que cuando vuelvo a la home desps de un detalle no se me actualice de nuevo
     // // el use effect se va a ejecutar solo una vez cuando se monte el comp -> []
     // useEffect(()=>{
     //     //cada vez q renderizo el comp me dispacha todos los perros
@@ -26,9 +23,10 @@ export default function Dogs(){
     //reinicio el paginado
     useEffect(()=>{
         setCurrentPage(0);
-    }, [dogs]);
+        dispatch(getCopyDogs(dogs))
+    }, [dogs, dispatch]);
 
-    
+
     //paginado
     const [currentPage, setCurrentPage] = useState(0)
     

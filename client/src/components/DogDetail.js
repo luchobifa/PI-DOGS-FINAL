@@ -39,6 +39,6 @@ export default function DogDetail(props){
             </div>
         )
     }else{
-        return <h1>Cargando...</h1>
+        return <h1 className = {styles.loading}>Cargando...</h1>
     }
 }
