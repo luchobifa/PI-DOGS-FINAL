@@ -27,6 +27,9 @@ module.exports = (sequelize) => {
     },
     life_span:{
       type: DataTypes.STRING,
+    },
+    country:{
+      type: DataTypes.STRING
     }
   });
 };

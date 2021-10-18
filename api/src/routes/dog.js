@@ -9,8 +9,8 @@ const {
   } = process.env;
 
 router.post('/', async (req, res) =>{
-    let {name, height, weight, life_span, temperaments, image} = req.body;
-    if(!name || !height || !weight){
+    let {name, minHeight, maxHeight, minWeight, maxWeight, life_span, temperaments, image, country} = req.body;
+    if(!name){
         return res.send('Must fill stared')
     }
     if(!image){
@@ -20,9 +20,10 @@ router.post('/', async (req, res) =>{
         const newDog = await Dog.create({
             image,  
             name,
-            height,
-            weight,
-            life_span
+            height: `${minHeight} - ${maxHeight}`,
+            weight: `${minWeight} - ${maxWeight}`, 
+            life_span,
+            country
         });
         //console.log(newDog.toJSON()); 
 

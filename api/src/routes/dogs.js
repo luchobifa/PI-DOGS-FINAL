@@ -1,7 +1,6 @@
 var express = require('express');
 const router = express.Router();
 const {Dog, Temperament} = require('../db');
-// const axios = require('axios');
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 require('dotenv').config();
 const {
@@ -33,10 +32,6 @@ router.get('/', async (req, res) =>{
         let localBreeds = await Dog.findAll({
             include:[{
                 model: Temperament,
-                attributes: ['name'],
-                through: { 
-                    attributes: []
-                }  
             }],  
             attributes: {exclude: ['height', 'life_span', 'createdAt', 'updatedAt']} 
         });
@@ -60,12 +55,15 @@ router.get('/', async (req, res) =>{
         if(name){
             //console.log('QUERY: ', name);
 
+
+            //podria concatenar los dos y hace run solo filter
             //busco contenga el nombre ingresado por query en la API
             let arrNameApi = apiBreeds.filter(b => b.name.toLowerCase().includes(name.toLowerCase()));
             
             //busco contenga el nombre ingresado por query en la DB 
             let arrNameLocal = result.filter(b => b.name.toLowerCase().includes(name.toLowerCase()));
             //console.log(arrNameLocal);    
+
              
             //si no me traje nada en ninguno de los 2 retorno error
              if(!arrNameApi.length && !arrNameLocal.length){
@@ -74,7 +72,7 @@ router.get('/', async (req, res) =>{
             
             return res.status(200).json([...arrNameApi, ...arrNameLocal])
         }
-        return res.status(200).json([...apiBreeds, ...result]);
+        return res.status(200).json([...result, ...apiBreeds]);
     }catch(err){
         return console.log(err);
     }
@@ -118,11 +116,11 @@ router.get('/:id', async(req, res) =>{
 
                 //me trae los temperamentos asociados
                 let temperaments = await dogDB.getTemperaments();
-                console.log(temperaments); 
+                //console.log(temperaments); 
 
                 //mapeo para obtener el nombre de cada temp
                 let tempMap = temperaments.map(el => el.dataValues.name);
-                //console.log(tempMap)
+                //console.log(tempMap);
                 
                 //los uno por que me devuelve un array
                 dogDB.dataValues.temperament = tempMap.join(' ')
@@ -132,7 +130,7 @@ router.get('/:id', async(req, res) =>{
             }
          }
     }catch(err){
-        return res.send(console.log(err));
+        return res.send(err);
     }
 });
 
