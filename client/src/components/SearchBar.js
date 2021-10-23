@@ -24,6 +24,7 @@ export default function SearchBar(){
     function handleChange(e){
         //console.log(e.target.value)
         setValue(e.target.value);
+        dispatch(getDogs(e.target.value));
     }
     //console.log(value)
     

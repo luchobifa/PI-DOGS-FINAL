@@ -16,14 +16,14 @@ export function getDogs(name) {
 }
 
 export function getDogsFiltered(breed){
-    //console.log(breed)
+    //console.log(breed);
     return{type: "GET_DOGS_FILTERED_BY_BREED", payload: breed}
 }
 
 export function getDogId(id){
     return async function(dispatch){
         let data = await (await axios.get(`http://localhost:3001/dogs/${id}`)).data;
-        //console.log(data)
+        //console.log(data);
         return dispatch({type: "GET_DOG_ID", payload: data})
     }
 }
@@ -33,7 +33,7 @@ export function getTemperaments(){
         let data = await (await axios.get(`http://localhost:3001/temperament`)).data;
         return dispatch({type: "GET_TEMPERAMENT", payload: data})
     }
-}
+} 
 
 export function postDog(input){
     return async function(dispatch){
@@ -58,3 +58,6 @@ export function order(order){
     return {type: "ORDER", payload : order}
 }
 
+export function reset(){
+    return{type: "DELETE_DETAIL"}
+}

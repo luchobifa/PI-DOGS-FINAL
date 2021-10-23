@@ -27,6 +27,13 @@ function parseWeight(str){
 
 export default function rootReducer(state = initialState, action) {
     switch(action.type){
+        case "DELETE_DETAIL":{
+            return{
+                ...state,
+                dogDetail: {}
+            }
+
+        }
         case "GET_ALL":
             return{
                 ...state,
@@ -111,12 +118,19 @@ export default function rootReducer(state = initialState, action) {
                         return ((a.weight['metric'] ? parseWeight(a.weight['metric']) : parseWeight(a.weight)) - (b.weight['metric'] ? parseWeight(b.weight['metric']): parseWeight(b.weight)))
                     }),
                 }
-            }else{
+            }else if(action.payload === 'max_weight'){
                 return{
                     ...state,
                     filteredDogs: [...state.filteredDogs].sort((a, b) => {
                         return ((b.weight['metric'] ? parseWeight(b.weight['metric']): parseWeight(b.weight)) - (a.weight['metric'] ? parseWeight(a.weight['metric']): parseWeight(a.weight)))
                     }),
+                }
+            }else{
+                return{
+                    ...state,
+                    filteredDogs:[...state.filteredDogs].sort((a, b) => {
+                        return(a.life_span < b.life_span)
+                    })
                 }
             }
         default:

@@ -4,7 +4,7 @@ import Home from './components/Home'
 import Nav from './components/Nav'
 import LandingPage from './components/LandingPage';
 import CreateDog from './components/CreateDog';
-import Favorites from './components/Favorites';
+// import Favorites from './components/Favorites';
 import DogDetail from './components/DogDetail';
 
 function App() {
@@ -27,10 +27,10 @@ function App() {
           exact path = '/home/createDog'
           render={() => <CreateDog/> }
         />
-        <Route
+        {/* <Route
           exact path = '/home/favorites'
           render={() => <Favorites/> }
-        />
+        /> */}
         <Route
           exact path = '/home/detail/:id'
           component={DogDetail}

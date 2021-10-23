@@ -11,7 +11,8 @@ export default function CreateDog(){
         height: '',
         weight: '',
         life_span: '',
-        temperaments: []
+        temperaments: [],
+        country: ""
     })
 
     const temps = useSelector((state)=> state.temperaments);
@@ -34,7 +35,8 @@ export default function CreateDog(){
                 minWeight: '',
                 maxWeight: '',
                 life_span: '',
-                temperaments: []
+                temperaments: [],
+                country:""
             } 
         )
         dispatch(getDogs())
@@ -75,7 +77,7 @@ export default function CreateDog(){
         <div className = {styles.img}>
         <div className = {styles.conteiner}>
         <form onSubmit = {handleSubmit} className = {styles.form}>
-            <h2 className = {styles.title}>Create a breed!</h2>
+            <h2 className = {styles.title}>Create a breed !</h2>
             <div className = {styles.content}>
                 
                 <div className = {styles.nameyhei}>
@@ -99,14 +101,14 @@ export default function CreateDog(){
                     <div className={styles.eachInput}>
                         <label className = {styles.label}>Weight *</label>
 
-                        <input  className={styles.inputs} type = 'number' defaultValue = "" name = 'minWeight' onChange = {handleChange} required placeholder = "Type the min weight [Centimeters]"></input>
+                        <input  className={styles.inputs} type = 'number' defaultValue = "" name = 'minWeight' onChange = {handleChange} required placeholder = "Type the min weight [Kilograms]"></input>
                         
 
-                        <input  className={styles.inputs} type = 'number' defaultValue = "" name = 'maxWeight' onChange = {handleChange} required placeholder = "Type the max weight [Centimeters]"></input>
+                        <input  className={styles.inputs} type = 'number' defaultValue = "" name = 'maxWeight' onChange = {handleChange} required placeholder = "Type the max weight [Kilograms]"></input>
                         
                     </div>
                     <div className={styles.eachInput}>
-                        <label className = {styles.label}>Span life </label>
+                        <label className = {styles.label}>Life Span </label>
                         <input   className={styles.inputs} type = 'text' value = {input.life_span}  name = 'life_span' onChange = {handleChange} placeholder = "Type the life span [Years]"></input>
                     </div> 
                 </div>
@@ -124,9 +126,11 @@ export default function CreateDog(){
                             {input.temperaments.map(t => <div key = {t} className = {styles.temps}>{t }<button className={styles.deleteBtn} onClick = {()=> deleteTemp(t)}>X</button></div>)}
                         </div>
                     </div>
+                    {/* <label> Country</label>
+                    <input name = "country" type = "text" value ={input.country} onChange={handleChange}></input> */}
                 </div>
 
-                <button className = {styles.btn}>CREATE!</button>
+                <button className = {styles.btn}>CREATE !</button>
             </div>
         </form>
         </div>

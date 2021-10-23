@@ -4,12 +4,13 @@ import {useSelector, useDispatch} from 'react-redux'
 import Dog from './Dog'
 import styles from '../css/Dogs.module.css'
 import { Link } from "react-router-dom";
-import {getCopyDogs} from "../actions/index"
+
 
 export default function Dogs(){
     const dispatch =  useDispatch();
     
     let dogs = useSelector((state) => (state.filteredDogs))
+    //console.log(dogs)
     let errors =  useSelector((state) => (state.error))
 
     //lo hago en la landing y en nav para que cuando vuelvo a la home desps de un detalle no se me actualice de nuevo
@@ -23,7 +24,6 @@ export default function Dogs(){
     //reinicio el paginado
     useEffect(()=>{
         setCurrentPage(0);
-        dispatch(getCopyDogs(dogs))
     }, [dogs, dispatch]);
 
 
@@ -41,8 +41,21 @@ export default function Dogs(){
         if(currentPage > 0)
             setCurrentPage(currentPage - 8)
     }
-
     //console.log(errors)
+
+    function deleteNaN(str){
+        let arr =  str.split(' - ');
+        //console.log(arr)
+        let index;
+        for(let i =0; i < arr.length; i++){
+            if(arr[i] === "NaN"){
+                index = i;
+             }
+        }
+        arr.splice(index, 1);
+        //console.log(arr);
+        return arr.join();
+    }
 
     if(dogs.length){
         return(
@@ -55,12 +68,12 @@ export default function Dogs(){
             {
                 eightDogs(dogs).map(p => {
                     return(
-                        <Link className = {styles.linkTitles} to = {'/home/detail/' + p.id} key = {p.name}>
+                        <Link className = {styles.linkTitles} to = {'/home/detail/' + p.id} key = {p.id}>
                             <Dog
                                 img = {p.image}
                                 name = {p.name}
                                 temp = {p.temperament}
-                                weight = {p.weight['metric'] ? `${p.weight['metric']} kg` : `${p.weight} kg`}
+                                weight = {p.weight['metric'] ? p.weight['metric'].includes('NaN') ?`${deleteNaN(p.weight['metric'])} kg` : `${p.weight['metric']} kg`  : `${p.weight} kg`}
                             />
                         </Link>
                         

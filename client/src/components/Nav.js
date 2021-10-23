@@ -21,10 +21,14 @@ export default function Nav(){
 
     return(
         <header className = {styles.divHeader}>
-            <Link  to = '/home' onClick = {refresh} className = {styles.linkLogo}><img className={styles.logo} alt= '' src = {logo}/></Link>
-            <Link className = {styles.home}  to = '/home'>Home</Link>
-            <Link className = {styles.home} to = '/home/createDog'>Create</Link>
-            {/* <Link className = {styles.home} to = '/home/favorites'>Favorites</Link> */}
+            <div className = {styles.contentLogo}>
+                <Link  to = '/home' onClick = {refresh} className = {styles.linkLogo}><img className={styles.logo} alt= '' src = {logo}/></Link>
+            </div>
+            <div className = {styles.content}>
+                <Link className = {styles.home}  to = '/home'>Home</Link>
+                <Link className = {styles.home} to = '/home/createDog'>Create</Link>
+                {/* <Link className = {styles.home} to = '/home/favorites'>Favorites</Link> */}
+            </div>
         </header>
     )
 }
