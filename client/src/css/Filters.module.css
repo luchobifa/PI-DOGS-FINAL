@@ -7,20 +7,23 @@
 
 .filters{
     display: flex;
-    margin-top: 10px;
+    margin-top: 30px;
     /* background-color: black; */
-    height: 85px;
-    width: 45%;
+    height: auto;
+    max-width: 90%;
+    min-width: 300px;
     gap: 30px; 
     background-image: url("../img/fondo.jpg");
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    padding: 15px;
 }
 
 .select{
     cursor: pointer;
     border: 2px solid;
     height: 35px;
-    width: 24%;
+    width: 250px;
 }

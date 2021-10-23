@@ -3,8 +3,11 @@
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    margin-top: 70px;
-    margin-left: 100px;
+    margin-top: 250px;
+    flex-wrap: wrap;
+    width: 90%;
+    align-self: center;
+    gap: 30px;
 }
 
 .content{
@@ -12,14 +15,15 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    width: auto;
 }
 
 .img{
-    width: 750px;
-    height: 500px;
-    margin-left: 100px;
+    width: 90%;
+    max-width: 570px;
     border-radius: 6px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-bottom: 50px;
 }
 
 .ul{
@@ -29,10 +33,18 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
+    margin: 0;
+    padding: 0;
 }
 
 .title{
     font-family: sans-serif;
+}
+
+.link{
+  position: absolute;
+    top:140px;
+    left: 30px;
 }
 
 .btnBack {
@@ -42,15 +54,14 @@
     color: #FFFFFF;
     text-align: center;
     text-transform: uppercase;
-    font-size: 18px;
+    font-size: 95%;
     font-family: 'Architects Daughter', cursive;
     padding: 20px;
     width: 140px;
     height: 58px;
     transition: all 0.4s;
     cursor: pointer;
-    margin-right: 1500px;
-    margin-top: 180px;
+    margin-top: 35px;
   }
   .btnBack {
     cursor: pointer;

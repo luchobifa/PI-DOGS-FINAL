@@ -78,42 +78,36 @@ export default function CreateDog(){
         <div className = {styles.conteiner}>
         <form onSubmit = {handleSubmit} className = {styles.form}>
             <h2 className = {styles.title}>Create a breed !</h2>
-            <div className = {styles.content}>
                 
-                <div className = {styles.nameyhei}>
-                    <div className={styles.eachInput}>
-                        <label className = {styles.label}>Name *</label>
-                        <input  className={styles.inputs} type = 'text' value = {input.name} name = 'name' onChange = {handleChange} required placeholder = "Type a name"></input>
-                    </div>
+            <div className={styles.eachInput}>
+                <label className = {styles.label}>Name *</label>
+                <input  className={styles.inputs} type = 'text' value = {input.name} name = 'name' onChange = {handleChange} required placeholder = "Type a name"></input>
+            </div>       
 
-                    <div className={styles.eachInput}>
-                        <label className = {styles.label}>Height *</label>
+                <div className={styles.eachInput}>
+                    <label className = {styles.label}>Height *</label>
                         
-                        <input className={styles.inputs} type = 'number' defaultValue = "" name = 'minHeight' onChange = {handleChange} required placeholder = "Type the min height [Centimeters]"></input>
+                    <input className={styles.inputs} type = 'number' defaultValue = "" name = 'minHeight' onChange = {handleChange} required placeholder = "Type the min height [Centimeters]"></input>
                         
-                        
-                        <input   className={styles.inputs} type = 'number' defaultValue = "" name = 'maxHeight' onChange = {handleChange} required placeholder = "Type the max height [Centimeters]"></input>
-        
-                    </div>
+                    <input   className={styles.inputs} type = 'number' defaultValue = "" name = 'maxHeight' onChange = {handleChange} required placeholder = "Type the max height [Centimeters]"></input>
                 </div>
+                
+                <div className={styles.eachInput}>
+                    <label className = {styles.label}>Weight *</label>
 
-                <div className = {styles.weiyspan}>
-                    <div className={styles.eachInput}>
-                        <label className = {styles.label}>Weight *</label>
-
-                        <input  className={styles.inputs} type = 'number' defaultValue = "" name = 'minWeight' onChange = {handleChange} required placeholder = "Type the min weight [Kilograms]"></input>
+                    <input  className={styles.inputs} type = 'number' defaultValue = "" name = 'minWeight' onChange = {handleChange} required placeholder = "Type the min weight [Kilograms]"></input>
                         
 
-                        <input  className={styles.inputs} type = 'number' defaultValue = "" name = 'maxWeight' onChange = {handleChange} required placeholder = "Type the max weight [Kilograms]"></input>
-                        
+                    <input  className={styles.inputs} type = 'number' defaultValue = "" name = 'maxWeight' onChange = {handleChange} required placeholder = "Type the max weight [Kilograms]"></input>
                     </div>
+                    
                     <div className={styles.eachInput}>
                         <label className = {styles.label}>Life Span </label>
                         <input   className={styles.inputs} type = 'text' value = {input.life_span}  name = 'life_span' onChange = {handleChange} placeholder = "Type the life span [Years]"></input>
                     </div> 
-                </div>
+             
 
-                <div>
+                <div className = {styles.divTemps}>
                     <label> Add temperaments:</label>
                     <select className={styles.inputTemp} onChange = {handleSelect} defaultValue = 'All Temperaments'>
                         <option value = 'All Temperaments'disabled>All Temperaments</option>
@@ -131,7 +125,7 @@ export default function CreateDog(){
                 </div>
 
                 <button className = {styles.btn}>CREATE !</button>
-            </div>
+            
         </form>
         </div>
         </div>

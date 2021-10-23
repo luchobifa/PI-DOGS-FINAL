@@ -38,7 +38,7 @@ export default function DogDetail(props){
     //espero que me cargue todo para despues renderizarlo sino me llega undefined
     if(detail.hasOwnProperty('name')){
         return(
-            <div>
+            <div style = {{position: "relative", display: "flex", justifyContent: "center"}}>
                     <Link to = "/home" className = {styles.link}><button className = {styles.btnBack}>BACK</button></Link>
                     <div className = {styles.conteiner}>
                         <div className = {styles.content}>

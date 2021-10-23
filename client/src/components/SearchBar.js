@@ -18,7 +18,7 @@ export default function SearchBar(){
     function handleSubmit(e){
         e.preventDefault();
         dispatch(getDogs(value));
-        setValue('');
+        // setValue('');
     }
 
     function handleChange(e){

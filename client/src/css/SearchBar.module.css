@@ -9,7 +9,7 @@
     border: 1px solid;
     color: rgba(0, 0, 0, 0.233);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    margin-bottom: 250px;
+    margin-bottom: 310px;
 }
 
 .input {
@@ -33,15 +33,16 @@
 
   .banner{
     width: 100%;
-    height: 310px;
+    height: 23vh;
     background-image: url('../img/banner2.png');
-    background-size: 100% 90%;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center ;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 350px;  
+    padding-top: 350px;
+    margin-top: 75px;
 }
 
 .form{

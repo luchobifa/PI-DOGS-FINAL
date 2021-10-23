@@ -16,10 +16,6 @@ export default function LandingPage(){
     
     return(
         <div className = {styles.backgr}>
-            {/* <h1>The best</h1>
-            <h1>therapist</h1>
-            <h1>has fur</h1>
-            <h1>and four legs</h1> */}
             <video className = {styles.video} autoPlay loop muted>
                 <source src={video} type="video/mp4"/>
             </video>

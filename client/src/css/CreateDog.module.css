@@ -1,18 +1,14 @@
-.img{
-    background-image: url("../img/formback.jpg");
-    background-repeat: no-repeat;
-    background-size: 100% 110%;
-    height: 100%;
-    width: 100%;
-    margin-right: 300px;
-}
-
 .conteiner{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 180px;
-    /* margin-left: 300px; */
+    background-image: url("../img/formback.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    /* margin-top: 145px; */
+    padding-top: 20vh;
 }
 
 .form{
@@ -21,77 +17,58 @@
     align-items: center;
     flex-direction: column;
     gap: 40px;
-    margin-top: 50px;
     background-color: RGB(239, 240 , 244);
-    width: 670px;
-    height: 630px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 10px;
-}
-
-.content{
-    margin-bottom: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 50px;
-    width: 600px;
-    height: 490px;
-}
-
-.nameyhei{
-    display: flex;
-    flex-direction: row;
-    gap: 35px;
-}
-
-.weiyspan{
-    display: flex;
-    flex-direction: row; 
-    gap: 35px;
+    height: auto;
+    width: 30%;
+    margin-bottom: 20px;
 }
 
 .eachInput{
     display: flex;
     flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.divTemps{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap :8px;
+    width: 100%;
 }
 
 .title{
-    margin-top: 100px;
     font-family: 'Architects Daughter', cursive;
     text-decoration: underline;
 }
 
 .inputs{
-    margin-left: 45px;
     border-color: RGB(204, 214 , 223);
     border-radius: 4px;
     height: 24px;
     width: 217px;
-    margin-top: 5px;
 }
 
 .inputTemp{
-    margin-left: 35px;
     border-color: RGB(204, 214 , 223);
     border-radius: 4px;
     height: 25px;
     width: 150px;
 }
 
-.label{
-    margin-bottom: 8px;
-    margin-right: 120px;
-}
-
 .addedConteiner{
-    width: 540px;
-    height: 100px;
+    /* height: 100px; */
+    width: 100%;
     display: flex;
     align-items: flex-start;
     justify-content: center;
     margin-top: 20px;
+    flex-wrap: wrap;
 }
 
 .temps{
@@ -124,7 +101,7 @@
     font-family: 'Architects Daughter', cursive;
     font-size: 18px;
     width: 140px;
-    height: 80px;
+    height: 60px;
     border-radius: 8px;
     margin-bottom: 50px;
 }
@@ -138,4 +115,10 @@
 
 .caricature{
     background-color: white;
+}
+
+@media screen and (max-width: 600px) {
+    .form{
+        width: 100%;
+    }
 }
